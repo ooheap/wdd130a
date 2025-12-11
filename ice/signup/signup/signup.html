@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Feed - Sign Up</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <button class="close-btn">X</button>
+        
+        <header class="header">
+            <img src="images/jesus_feeds_5000.jpeg" alt="Jesus teaching" class="hero-image">
+            <div class="header-text">
+                <h1>Daily Feed</h1>
+                <p>Scripture a Day</p>
+            </div>
+        </header>
+
+        <main class="form-container">
+            <h2>Sign Up for Daily Scripture Feed</h2>
+
+            <form id="signupForm">
+                <div class="form-row">
+                    <label for="username">User Name:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+
+                <div class="form-row">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+
+                <div class="form-row">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-row">
+                    <label for="gender">Gender:</label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="gender" value="male" required>
+                            Male
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="gender" value="female" required>
+                            Female
+                        </label>
+                    </div>
+                </div>
+
+                <div class="checkbox-row">
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="newsletter">
+                        Subscribe to newsletter
+                    </label>
+                </div>
+
+                <div class="checkbox-row">
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="terms" required>
+                        I acknowledge the terms and conditions
+                    </label>
+                </div>
+
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+        </main>
+
+        <footer class="footer">
+            <div class="book-grid">
+                <img src="images/old_testament.webp" alt="Old Testament">
+                <img src="images/new_testament.webp" alt="New Testament">
+                <img src="images/book_of_mormon.webp" alt="Book of Mormon">
+                <img src="images/doctrine_and_covenants.webp" alt="Doctrine and Covenants">
+                <img src="images/pearl_of_great_price.webp" alt="Pearl of Great Price">
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // This JavaScript handles form submission
+        document.getElementById('signupForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevents the default form submission
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = {};
+            
+            // Convert FormData to an object
+            for (let [key, value] of formData.entries()) {
+                if (data[key]) {
+                    // If key already exists, make it an array
+                    if (Array.isArray(data[key])) {
+                        data[key].push(value);
+                    } else {
+                        data[key] = [data[key], value];
+                    }
+                } else {
+                    data[key] = value;
+                }
+            }
+            
+            // Display the collected data
+            console.log('Form Data Submitted:', data);
+            alert('Thank you for signing up! Check the console to see your data.');
+            
+            // In WDD131, you'll learn how to send this data to a server
+            // or store it in a database
+        });
+    </script>
+</body>
+</html>

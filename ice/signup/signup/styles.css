@@ -1,0 +1,242 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, 'Times New Roman', serif;
+    background-color: #8B7355;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Container */
+.container {
+    max-width: 600px;
+    width: 100%;
+    background: white;
+    border: 8px solid #2E5C9A;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 30px;
+    height: 30px;
+    background: white;
+    border: 2px solid #333;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close-btn:hover {
+    background: #f0f0f0;
+}
+
+/* Header with Hero Image */
+.header {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.header-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.header-text h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+    letter-spacing: 2px;
+}
+
+.header-text p {
+    font-size: 1.5rem;
+    font-style: italic;
+}
+
+/* Form Container */
+.form-container {
+    padding: 40px 40px 50px;
+    background: white;
+    min-height: 400px;
+}
+
+.form-container h2 {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+/* Form Layout */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Labels */
+label {
+    color: #333;
+    font-weight: bold;
+    text-align: left;
+}
+
+/* Input Styles */
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    padding: 8px 12px;
+    border: 1px solid #999;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus {
+    outline: none;
+    border-color: #2E5C9A;
+}
+
+/* Radio Buttons */
+.radio-group {
+    display: flex;
+    gap: 20px;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+input[type="radio"] {
+    cursor: pointer;
+}
+
+/* Checkboxes */
+.checkbox-row {
+    display: flex;
+    align-items: center;
+    padding-left: 135px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+input[type="checkbox"] {
+    cursor: pointer;
+}
+
+/* Submit Button */
+.submit-btn {
+    margin: 20px auto 0;
+    padding: 8px 30px;
+    background: white;
+    color: #333;
+    border: 2px solid #999;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    display: block;
+}
+
+.submit-btn:hover {
+    background: #f0f0f0;
+}
+
+.submit-btn:active {
+    background: #e0e0e0;
+}
+
+/* Footer with Book Grid */
+.footer {
+    background: #1a1a1a;
+    padding: 0;
+}
+
+.book-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1px;
+    background: #1a1a1a;
+}
+
+.book-grid img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 5px;
+    }
+    
+    .checkbox-row {
+        padding-left: 0;
+    }
+    
+    .header-text h1 {
+        font-size: 2rem;
+    }
+    
+    .header-text p {
+        font-size: 1.2rem;
+    }
+    
+    .book-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

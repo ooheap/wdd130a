@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Owen Heap</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Roboto+Serif:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Roboto Serif', serif;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 60px;
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #49516F 0%, #89DAFF 100%);
+            border-radius: 8px;
+        }
+
+        .logo-text {
+            font-family: 'Roboto Serif', serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: #333;
+        }
+
+        nav {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #666;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #89DAFF;
+        }
+
+        .cta-button {
+            background: #49516F;
+            color: white !important;
+            padding: 10px 24px;
+            border-radius: 6px;
+            transition: background 0.3s;
+        }
+
+        .cta-button:hover {
+            background: #3a4158;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            align-items: center;
+            padding: 80px 60px;
+            gap: 60px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .hero-content {
+            flex: 1;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            color: #1a1a1a;
+        }
+
+        .hero p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #666;
+            margin-bottom: 32px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+        }
+
+        .primary-btn {
+            background: #49516F;
+            color: white;
+            padding: 14px 32px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .primary-btn:hover {
+            background: #3a4158;
+        }
+
+        .secondary-btn {
+            background: white;
+            color: #49516F;
+            padding: 14px 32px;
+            border: 2px solid #49516F;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .secondary-btn:hover {
+            background: #F1FEC6;
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .image-placeholder {
+            width: 500px;
+            height: 500px;
+            background-image: url('images/dogpic.png');
+            background-size: cover;
+            background-position: center;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 60px;
+            background: #A6E1FA;
+        }
+
+        .features h2 {
+            text-align: center;
+            font-size: 42px;
+            margin-bottom: 60px;
+            color: #1a1a1a;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 12px rgba(0,0,0,0.1);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #49516F 0%, #89DAFF 100%);
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 24px;
+            margin-bottom: 12px;
+            color: #1a1a1a;
+        }
+
+        .feature-card p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #666;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 60px 60px 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+            max-width: 1400px;
+            margin: 0 auto 40px;
+        }
+
+        .footer-section h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .footer-section p, .footer-section a {
+            color: #999;
+            text-decoration: none;
+            line-height: 2;
+            display: block;
+        }
+
+        .footer-section a:hover {
+            color: #89DAFF;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #333;
+            color: #999;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                padding: 40px 20px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                gap: 20px;
+            }
+
+            header {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <div class="logo-icon"></div>
+            <span class="logo-text">Owen Heap</span>
+        </div>
+        <nav>
+            <a href="#filler">filler</a>
+            <a href="#filler">filler</a>
+            <a href="#filler">filler</a>
+            </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Owen Heap's Webpage</h1>
+            <p>Webpage for Owen's WDD130 class</p>
+            <div class="hero-buttons">
+                <button class="primary-btn">Get Started</button>
+                <button class="secondary-btn">Learn More</button>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="image-placeholder"></div>
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <h2>Links to stuff</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon"></div>
+                <h3>ICE</h3>
+                <p>In Class Activities</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"></div>
+                <h3>place holder</h3>
+                <p>qwertyuiop</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"></div>
+                <h3>Place holder</h3>
+                <p>qwwerttyuioopp</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Owenheap. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
