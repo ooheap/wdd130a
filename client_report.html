@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Report - Owen Heap</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Roboto+Serif:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
+    <style>
+
+        .report-paragraph {
+            margin-bottom: 0 !important;
+            line-height: 1.7 !important;
+            font-size: 1.3em !important; /* Increased font size again */
+            color: #000000 !important; /* Guaranteed Solid Black */
+            font-weight: 400 !important;
+        }
+        
+        .project-card a {
+            color: #49516F; 
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .project-card a:hover {
+            color: #89DAFF;
+            text-decoration: underline;
+        }
+        .project-card h3 {
+            color: #1a1a1a;
+            font-size: 28px;
+        }
+
+        .projects-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px; 
+            margin-top: 40px;
+        }
+
+        /* Ensure all cards have equal height/space in the grid */
+        .project-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            min-height: 350px; /* Increased min-height to accommodate larger text */
+            padding: 40px; 
+        }
+        
+        /* Responsive adjustment for 1 column on smaller screens, matching your existing media query */
+        @media (max-width: 768px) {
+            .projects-grid {
+                grid-template-columns: 1fr; /* Stack cards vertically on mobile */
+            }
+        }
+
+        /* Styling for the links/sites list */
+        .project-card ul {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 15px;
+        }
+        .project-card ul li {
+            margin-bottom: 5px;
+            font-size: 1em; 
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <div class="logo-icon"></div>
+            <span class="logo-text">Owen Heap</span>
+        </div>
+        <nav>
+            <a href="ice.html">ICE</a>
+            <a href="wwr/index.html">WWR</a>
+            <a href="index.html">Home</a>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <h1>Project Team Reports and Reflection</h1>
+
+        <div class="projects-grid">
+
+            <div class="project-card">
+                <div class="project-icon"></div>
+                <h3>Client Report</h3>
+                <div>
+                    <p class="report-paragraph">As a client I decided what content and images to use based on what was appealing to me. I really like sports so I chose to focus the content around my favorite football player, Justin Herbert. I communicated with my developer through email and in person during class. There were no issues in communication. Yes, my developer met my expectations, he did a great job. Next time, I will make sure I get all the content to my developer right away.</p>
+                    <ul>
+                        <li><a href="https://mdhanis07.github.io/wdd130-heap/" target="_blank">Client Site: https://mdhanis07.github.io/wdd130-heap/</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-icon"></div>
+                <h3>Junior Developer Report</h3>
+                <div>
+                    <p class="report-paragraph">As junior developer I communicated with my team leads in person during class, there was no issues. My team leads were pretty clear with assigning me content to complete. I contributed to both sites as my team leads instructed to. I didn't have any GitHub issues at this point.</p>
+                    <ul>
+                        <li><a href="https://redhead20.github.io/WDD130-jarommore/" target="_blank">Site 1: redhead20.github.io/WDD130-jarommore/</a></li>
+                        <li><a href="https://mintyparadice.github.io/murray/" target="_blank">Site 2: mintyparadice.github.io/murray/</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-icon"></div>
+                <h3>Lead Developer Report</h3>
+                <div>
+                    <p class="report-paragraph">I communicated my tasks to my junior developers in person and over email. I communicated with my client mostly in person during class, and a little bit over email. There were not any major issues with communication, however it did take a while for me to receive the content from my client for the webpage which was a minor hold up. I used GitHub pages to publish it and gave my client access to the repository. It took me a while to really understand GitHub, but i managed to make it work and feel good about using GitHub now.</p>
+                    <ul>
+                        <li><a href="https://ooheap.github.io/wdd130-minty/" target="_blank">Published Site: ooheap.github.io/wdd130-minty/</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-icon"></div>
+                <h3>Project Reflection</h3>
+                <div>
+                    <p class="report-paragraph">The most challenging part of the project was learning to use GitHub. I have always been a little confused on how to use GitHub but I overcame the problems I had. I enjoyed designing my own webpage with a site plan and wireframe and seeing it come to life. If I were to do this project again I would get in contact with my junior devs much earlier and collaborate with them much more. I feel confident working on real-world projects after this experience because I feel confident in using GitHub and communicating with a team to distribute a workload.</p>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-bottom">
+            <p>&copy; 2025 OwenHeap. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
